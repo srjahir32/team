@@ -12,7 +12,7 @@ var chalk = require('chalk');
 var apiurl = express.Router();
 var multipart = require('connect-multiparty');
 var multer = require('multer');
-
+var users = require(__dirname + ('/api/users.js'));
 
 app.set('port', process.env.PORT || 8000);
 
@@ -88,8 +88,22 @@ app.use('/api', apiRoutes);
 app.use('/staging/api', apiRoutes);
 
 app.get('/', function(req, res) {
-    res.send('Hello');
-})
+    res.sendFile("login.html", { "root": 'views' });
+});
+app.get('/home', function(req, res) {
+    res.sendFile("home.html", { "root": 'views' });
+});
+
+app.post('/user/signup', users.signup);
+app.post('/user/signin', users.signin);
+
+app.use("/css", express.static(__dirname + '/public/css'));
+app.use("/js", express.static(__dirname + '/public/js'));
+app.use("/img", express.static(__dirname + '/public/images'));
+app.use("/scripts", express.static(__dirname + '/public/scripts'));
+app.use("/nodemodules", express.static(__dirname + '/node_modules'));
+app.use("/views", express.static(__dirname + '/views'));
+
 
 
 app.listen(app.get('port'));

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" ng-app="home">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>Team</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/structure.css" />
+
+
+</head>
+
+<body ng-controller="homeClt">
+
+    <div id="content">
+
+        <div class="topContent">
+            <fieldset class="">
+                <br>
+                <label>Welcome  {{username}}</label>
+            </fieldset>
+        </div>
+        <div id="menu">
+            <fieldset class="">
+                <ul class="menu">
+                    <li><label><a href="/user">
+                           <span>Profile</span>
+                         </a></label></li>
+                    <li><label><a href="/profile">
+                           <span>Friend List</span>
+                         </a></label></li>
+                    <li><label><a href="/password">
+                           <span>Password Setting</span>
+                         </a></label></li>
+                    <li><label><a href="/reminder">
+                           <span>Birthday Reminder</span>
+                         </a></label></li>
+                    <li><label><a href="/chat">
+                           <span>Chat</span>
+                         </a></label></li>
+                    <li><label><a href="/">
+                           <span>Log Out</span>
+                         </a></label></li>
+                </ul>
+            </fieldset>
+        </div>
+
+        <div ng-view></div>
+    </div>
+
+
+    <script type="text/javascript" src="/nodemodules/angular/angular.js"></script>
+    <script type="text/javascript" src="/views/controller/home.js"></script>
+
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/menu.js"></script>
+
+</body>
+
+</html>

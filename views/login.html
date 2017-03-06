@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="login">
+
+<head>
+    <title>Team</title>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/structure.css">
+
+
+</head>
+
+<body ng-controller="loginClt">
+    <form class="box login" ng-submit="login()">
+        <fieldset class="boxBody">
+            <label>Email</label>
+            <input type="text" tabindex="1" placeholder="Enter Your Email Address" name="email" required>
+            <label>Password</label>
+            <input type="password" tabindex="2" name="password" required>
+        </fieldset>
+        <footer>
+            <input type="submit" class="btnLogin" value="Login" tabindex="4">
+        </footer>
+    </form>
+    <script type="text/javascript" src="/nodemodules/angular/angular.js"></script>
+    <script type="text/javascript" src="/views/controller/login.js"></script>
+</body>
+
+</html>
