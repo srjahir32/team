@@ -12,7 +12,7 @@ app.controller('loginClt', function($scope, $window, $http, $location) {
         };
         $http({
             method: "POST",
-            url: "http://localhost:8000/user/signin",
+            url: "https://team-application.herokuapp.com/user/signin",
             data: angular.toJson(params),
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'
